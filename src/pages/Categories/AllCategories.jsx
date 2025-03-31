@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 const AllCategories = () => {
     const [status, setStatus] = useState(false);
     const [categories, setCategories] = useState(null);
+    const navigate = useNavigate();
 
     const changeStatus = () => {
         setStatus(!status);
