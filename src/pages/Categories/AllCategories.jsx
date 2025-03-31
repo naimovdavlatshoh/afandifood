@@ -5,6 +5,7 @@ import { GetDataSimple } from "../../service";
 import { AddCategory } from "./AddCategory";
 import { EditCategory } from "./EditCategory";
 import { Spinner } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const AllCategories = () => {
     const [status, setStatus] = useState(false);
@@ -15,10 +16,15 @@ const AllCategories = () => {
     };
 
     useEffect(() => {
+        if (!localStorage.getItem("token")) {
+            navigate("/login");
+        }
+    }, []);
+
+    useEffect(() => {
         GetDataSimple(
             `api/category/list?page=${currentPage}&limit=${itemsPerPage}`
         ).then((res) => {
-            console.log(res);
             setCategories(res.result);
         });
     }, [status]);
@@ -35,10 +41,6 @@ const AllCategories = () => {
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
-    };
-
-    const handleEdit = (categoryId) => {
-        console.log("Edit category with ID:", categoryId);
     };
 
     if (!categories) {

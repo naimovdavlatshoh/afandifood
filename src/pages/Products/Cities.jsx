@@ -21,7 +21,6 @@ export function Cities({ changeStatus, food }) {
     useEffect(() => {
         GetDataSimple("api/city/list").then((res) => {
             setCities(res);
-            console.log(res);
         });
     }, []);
 

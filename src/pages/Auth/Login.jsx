@@ -38,7 +38,7 @@ const Login = () => {
                 if (response.status == 200) {
                     localStorage.setItem("token", response.data.jwt);
                     localStorage.setItem("role", response.data.role_id);
-                    window.location.href = "/";
+                    window.location.href = "/products";
                 }
                 setLoading(false);
             })

@@ -6,21 +6,28 @@ import { AddProduct } from "./AddProduct";
 import { EditProduct } from "./EditProduct";
 import { Cities } from "./Cities";
 import { Spinner } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
 
 const AllProducts = () => {
     const [foods, setFoods] = useState(null);
     const [status, setStatus] = useState(false);
+    const navigate = useNavigate();
 
     const changeStatus = () => {
         setStatus(!status);
     };
 
     useEffect(() => {
+        if (!localStorage.getItem("token")) {
+            navigate("/login");
+        }
+    }, []);
+
+    useEffect(() => {
         GetDataSimple(
             `api/product/list?page=${currentPage}&limit=${itemsPerPage}`
         ).then((res) => {
             setFoods(res.result);
-            console.log(res);
         });
     }, [status]);
 

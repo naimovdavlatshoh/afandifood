@@ -36,7 +36,6 @@ export function AddProduct({ changeStatus }) {
     useEffect(() => {
         GetDataSimple("api/category/list?page=1&limit=10").then((res) => {
             setCategories(res.result);
-            console.log(res);
         });
     }, []);
 
