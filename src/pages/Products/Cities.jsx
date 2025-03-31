@@ -105,7 +105,7 @@ export function Cities({ changeStatus, food }) {
                 </DialogHeader>
                 <DialogBody
                     divider
-                    className="space-y-4 p-4 bg-gray-100 rounded-lg overflow-y-auto max-h-[80vh]"
+                    className="space-y-4 p-4 bg-gray-100 rounded-lg overflow-y-auto max-h-[50vh]"
                 >
                     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {cities.map((city) => (

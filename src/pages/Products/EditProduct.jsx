@@ -125,7 +125,7 @@ export function EditProduct({ changeStatus, item }) {
                 </DialogHeader>
                 <DialogBody
                     divider
-                    className="space-y-4 p-4 bg-gray-100 rounded-lg overflow-y-auto max-h-[80vh]"
+                    className="space-y-4 p-4 bg-gray-100 rounded-lg overflow-y-auto max-h-[50vh]"
                 >
                     <div className="flex flex-col space-y-4">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
