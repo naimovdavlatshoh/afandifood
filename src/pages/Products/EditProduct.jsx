@@ -116,7 +116,7 @@ export function EditProduct({ changeStatus, item }) {
             >
                 {lang === "ru" ? "редактировать" : "o'zgartirish"}
             </button>
-            <Dialog open={open} handler={handleOpen} className="min-w-[400px]">
+            <Dialog open={open} handler={handleOpen} className="min-w-[300px]">
                 <DialogHeader className="text-xl font-bold text-main">
                     {lang === "ru"
                         ? "Редактировать продукт"

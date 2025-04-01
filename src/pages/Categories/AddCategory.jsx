@@ -55,7 +55,7 @@ export function AddCategory({ changeStatus }) {
             >
                 {lang === "ru" ? "Добавить" : "Qo'shish"}
             </button>
-            <Dialog open={open} handler={handleOpen} className="min-w-[400px]">
+            <Dialog open={open} handler={handleOpen} className="min-w-[300px]">
                 <DialogHeader className="text-xl font-bold text-main">
                     {lang === "ru"
                         ? "Добавить категория"

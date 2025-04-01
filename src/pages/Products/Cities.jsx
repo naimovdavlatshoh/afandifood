@@ -96,7 +96,7 @@ export function Cities({ changeStatus, food }) {
                 <FaCity size={20} />
             </button>
 
-            <Dialog open={open} handler={handleOpen} className="min-w-[400px]">
+            <Dialog open={open} handler={handleOpen} className="min-w-[300px]">
                 <DialogHeader className="text-xl font-bold text-main">
                     {lang === "ru"
                         ? `Добавить товар в город`

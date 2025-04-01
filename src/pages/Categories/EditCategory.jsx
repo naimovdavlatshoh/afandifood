@@ -28,7 +28,6 @@ export function EditCategory({ changeStatus, category }) {
         const data = {
             category_name_uz: categoryNameUz,
             category_name_ru: categoryNameRu,
-
         };
         PostDataTokenJson(`api/category/update/${category.id}`, data)
             .then(() => {
@@ -61,7 +60,7 @@ export function EditCategory({ changeStatus, category }) {
             >
                 <FaEdit />
             </button>
-            <Dialog open={open} handler={handleOpen} className="min-w-[400px]">
+            <Dialog open={open} handler={handleOpen} className="min-w-[300px]">
                 <DialogHeader className="text-xl font-bold text-main">
                     {lang === "ru"
                         ? "Редактировать категория"

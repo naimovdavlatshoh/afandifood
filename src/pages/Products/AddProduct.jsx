@@ -116,7 +116,7 @@ export function AddProduct({ changeStatus }) {
             >
                 {lang === "ru" ? "Добавить" : "Qo'shish"}
             </button>
-            <Dialog open={open} handler={handleOpen} className="min-w-[400px]">
+            <Dialog open={open} handler={handleOpen} className="min-w-[300px]">
                 <DialogHeader className="text-xl font-bold text-main">
                     {lang === "ru" ? "Добавить продукт" : "Mahsulot qo'shish"}
                 </DialogHeader>
@@ -125,7 +125,7 @@ export function AddProduct({ changeStatus }) {
                     className="space-y-4 p-4 bg-gray-100 rounded-lg overflow-y-auto max-h-[50vh]"
                 >
                     <div className="flex flex-col space-y-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                             <Input
                                 label={
                                     lang === "ru"
