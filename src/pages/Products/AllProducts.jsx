@@ -108,7 +108,7 @@ const AllProducts = () => {
                                                         "lang"
                                                     ) == "ru"
                                                         ? city?.city_name_ru
-                                                        : city?.city_name_uz}
+                                                        : city?.city_name_ru}
                                                 </span>
                                             ) : (
                                                 "-"
