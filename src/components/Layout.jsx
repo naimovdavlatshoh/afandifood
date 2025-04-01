@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { IoFastFoodSharp } from "react-icons/io5";
 import { BiSolidCategory } from "react-icons/bi";
 import { FaGlobe } from "react-icons/fa";
@@ -9,6 +9,7 @@ const Layout = () => {
     const currentUrl = location.pathname;
     const [showLanguages, setShowLanguages] = useState(false);
     const lang = localStorage.getItem("lang");
+    const navigate = useNavigate();
 
     const handleChangeLanguage = (lang) => {
         localStorage.setItem("lang", lang);
@@ -59,26 +60,37 @@ const Layout = () => {
                     </div>
 
                     {/* Language Buttons for Laptop */}
-                    <div className="flex gap-3 mb-5">
+                    <div className="flex flex-col">
+                        <div className="flex gap-3 mb-5">
+                            <button
+                                onClick={() => handleChangeLanguage("uz")}
+                                className={`${
+                                    lang == "uz"
+                                        ? "bg-white text-main"
+                                        : "text-white"
+                                } px-4 py-2 rounded-lg `}
+                            >
+                                O'zbekcha
+                            </button>
+                            <button
+                                onClick={() => handleChangeLanguage("ru")}
+                                className={`${
+                                    lang == "ru"
+                                        ? "bg-white text-main"
+                                        : "text-white"
+                                } px-4 py-2 rounded-lg `}
+                            >
+                                Русский
+                            </button>
+                        </div>
                         <button
-                            onClick={() => handleChangeLanguage("uz")}
-                            className={`${
-                                lang == "uz"
-                                    ? "bg-white text-main"
-                                    : "text-white"
-                            } px-4 py-2 rounded-lg `}
+                            onClick={() => {
+                                localStorage.removeItem("token"),
+                                    navigate("/login");
+                            }}
+                            className={`${"bg-white text-main"} px-4 py-2 rounded-lg w-full`}
                         >
-                            O'zbekcha
-                        </button>
-                        <button
-                            onClick={() => handleChangeLanguage("ru")}
-                            className={`${
-                                lang == "ru"
-                                    ? "bg-white text-main"
-                                    : "text-white"
-                            } px-4 py-2 rounded-lg `}
-                        >
-                            Русский
+                            Выход
                         </button>
                     </div>
                 </div>
@@ -103,7 +115,9 @@ const Layout = () => {
                                 } flex flex-col items-center justify-center w-full h-full rounded-xl`}
                             >
                                 <IoFastFoodSharp size={24} />
-                                <span className="text-sm">{lang == "ru" ? "Продукты" : "Mahsulotlar"}</span>
+                                <span className="text-sm">
+                                    {lang == "ru" ? "Продукты" : "Mahsulotlar"}
+                                </span>
                             </Link>
                         </div>
                         <div className="w-1/3 h-full ">
@@ -116,7 +130,11 @@ const Layout = () => {
                                 } flex flex-col items-center justify-center w-full h-full rounded-xl`}
                             >
                                 <BiSolidCategory size={24} />
-                                <span className="text-sm">{lang== "ru" ? "Категории" : "Kategoriyalar"}</span>
+                                <span className="text-sm">
+                                    {lang == "ru"
+                                        ? "Категории"
+                                        : "Kategoriyalar"}
+                                </span>
                             </Link>
                         </div>
 
